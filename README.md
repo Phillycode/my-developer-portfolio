@@ -48,3 +48,7 @@ https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Cookies
 I investigated the procedures for performing Django database migrations to a server-based relational database like MariaDB:
 https://docs.djangoproject.com/en/5.2/ref/databases/
 https://docs.djangoproject.com/en/5.2/topics/migrations/
+
+```
+
+```
