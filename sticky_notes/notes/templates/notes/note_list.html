@@ -1,0 +1,36 @@
+<!-- note_list template -->
+{% extends 'base.html' %} {% block title %} Let's Get Sticky! - {{ page_title }}
+{% endblock %} {% block content %}
+<h3>Your <span class="sticky-word">Sticky</span> Notes</h3>
+<a href="{% url 'note_create' %}" class="btn btn-primary mb-3"
+  >Add Sticky Note</a
+>
+<!-- Create two columns of sticky notes on md-sized screens -->
+<div class="container">
+  <div class="row">
+    {% for note in notes %}
+    <div class="col-md-6 mb-4">
+      <div class="card sticky-note-card">
+        <div class="card-body">
+          <!-- Display sticky note title if one was added, otherwise display content -->
+          <p class="card-text">
+            {% if note.title %} {{ note.title }} {% else %} {{ note.content }}
+            {% endif %}
+          </p>
+          <a
+            href="{% url 'note_detail' pk=note.pk %}"
+            class="btn btn-secondary small-button"
+            >View</a
+          >
+          <a
+            href="{% url 'note_delete' pk=note.pk %}"
+            class="btn btn-warning small-button"
+            >Delete</a
+          >
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

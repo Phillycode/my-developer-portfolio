@@ -1,0 +1,62 @@
+/* Import Slackey font */
+@import url('https://fonts.googleapis.com/css2?family=Slackey&display=swap');
+
+body { 
+  font-family: "Arial", sans-serif;
+} 
+ 
+header {
+  background-image: url("images/spiderman_banner_top.jpg");
+  background-size: cover; /* Image fills the space */
+  background-position: center;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+main { 
+  margin: 20px; 
+}
+ 
+li { 
+  margin-bottom: 20px; 
+} 
+ 
+footer {
+  background-image: url("images/spiderman_banner_bottom.jpg");
+  background-size: cover; /* Image fills the space */
+  background-position: center; 
+  color: white; 
+  padding: 10px; 
+  text-align: center; 
+}
+/* Post-it styled card */
+.sticky-note-card {
+  background-color: #fffb88;
+  box-shadow: 4px 4px 8px rgba(0,0,0,0.2);
+  border: none;
+}
+
+/* Text style inside the sticky card */
+.sticky-note-card .card-text {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-size: 1.05rem;
+}
+
+/* Slackey font for sticky word */
+.sticky-word {
+  font-family: "Slackey", cursive;
+  color: #ffb300;
+  text-shadow: 1px 1px #815800;
+}
+
+/* Date text */
+.date-text {
+  font-size: 12px
+}
+
+/* Smaller size for "view" button on sticky notes */
+.view-button {
+  font-size: 0.6rem;
+  padding: 0.25rem 0.5rem;
+}

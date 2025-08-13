@@ -1,0 +1,30 @@
+<!-- note_detail template -->
+{% extends 'base.html' %} {% block title %} Sticky Notes - {{ note.content }}
+<!-- prettier-ignore -->
+{% endblock %} {% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 mb-4">
+      <div class="card sticky-note-card">
+        <div class="card-body">
+          <p class="sticky-word">
+            {% if note.title %} {{ note.title }} {% endif %}
+          </p>
+          <p class="card-text">{{ note.content }}</p>
+          <p class="date-text">Created at: {{ note.created_at }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<a href="{% url 'note_update' pk=note.pk %}" class="btn btn-sm btn-primary"
+  >Update Sticky Note</a
+>
+<a href="{% url 'note_delete' pk=note.pk %}" class="btn btn-sm btn-warning"
+  >Delete Sticky Note</a
+>
+<a href="{% url 'note_list' %}" class="btn btn-sm btn-secondary"
+  >Back to Sticky Notes</a
+>
+{% endblock %}

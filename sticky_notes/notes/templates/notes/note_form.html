@@ -1,0 +1,23 @@
+<!-- note_form template for creating and updating notes -->
+{% extends 'base.html' %} {% block title %} Let's Get Sticky! -
+<!-- prettier-ignore -->
+{% if form.instance.pk %} Edit {% else %} Create {% endif %} Sticky Note
+<!-- prettier-ignore -->
+{% endblock %} {% block content %}
+<h2>
+  {% if form.instance.pk %} Edit {% else %} Create {% endif %}
+  <span class="sticky-word">Sticky</span> Note
+</h2>
+<form
+  method="post"
+  action="{% if form.instance.pk %}
+  {% url 'note_update' pk=form.instance.pk %}{% else %}{% url 'note_create' %}{% endif %}"
+>
+  {% csrf_token %} {{ form.as_p }}
+  <button type="submit" class="btn btn-sm btn-primary">Save</button>
+</form>
+<br />
+<a href="{% url 'note_list' %}" class="btn btn-sm btn-secondary"
+  >Back to Sticky Notes</a
+>
+{% endblock %}
