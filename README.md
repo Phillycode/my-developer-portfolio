@@ -9,12 +9,16 @@ Latest update: Added delete button in the note_list view
 - Create and activate a virtual environment (venv)
 - Then install the dependencies from the included requirements.txt file:
 
+```bash
 pip install -r requirements.txt
+```
 
 - Apply database migrations and run the server:
 
-python manage.py migrate
+```bash
+python manage.py migrate 
 python manage.py runserver
+```
 
 - Open your browser at http://127.0.0.1:8000
 
@@ -22,7 +26,9 @@ python manage.py runserver
 
 - You can run tests for this app by navigating to the sticky_notes project folder in your terminal and run:
 
+```bash
 python manage.py test notes
+```
 
 # Credits and References
 
