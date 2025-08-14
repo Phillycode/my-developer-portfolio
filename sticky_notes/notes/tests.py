@@ -49,7 +49,7 @@ class NoteModelTest(TestCase):
 
 class NoteViewTest(TestCase):
     """This test class is responsible for testing all of our views
-    and their corresponding urls. These tests therefore include the
+    and their corresponding URL Patterns. These tests include the
     create, read, update and delete use cases of our application."""
 
     def setUp(self):
