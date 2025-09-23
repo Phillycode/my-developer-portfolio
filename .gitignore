@@ -1,12 +1,22 @@
-# Python cache
+# Python bytecode
 __pycache__/
-*.pyc
+*.py[cod]
+*$py.class
 
-# Virtual environment
+# Django stuff
+*.sqlite3        # default dev database
+db.sqlite3       # if using SQLite
+*.log            # log files
+
+# Environment
+.env             # environment variables (API keys, secrets)
+.venv
 myenv/
 
-# Database
-db.sqlite3
+# Django migrations
+*/migrations/*.pyc
+*/migrations/*.py
+*/migrations/__pycache__/
 
-# VS Code settings
+# IDE/editor settings
 .vscode/
