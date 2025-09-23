@@ -1,6 +1,6 @@
 # My Developer Portfolio
 
-Here is my portfolio repository with some of my favourite projects. I will update this as
+Here is my portfolio repository with some of my favourite projects.
 
 ## Projects
 
