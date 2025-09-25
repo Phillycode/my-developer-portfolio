@@ -7,7 +7,7 @@ __pycache__/
 *.sqlite3           # default dev database
 db.sqlite3          # if using SQLite
 *.log               # log files
-emails/             # file-based testing emails
+**/emails/          # file-based testing emails
 
 # Environment
 .env             # environment variables (API keys, secrets)
