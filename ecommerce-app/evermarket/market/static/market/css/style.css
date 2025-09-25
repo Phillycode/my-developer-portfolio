@@ -1,0 +1,54 @@
+.navbar-bg {
+    background-image: url("../images/fantasy_market.jpg");
+    background-size: cover;      /* make the image cover entire navbar */
+    background-position: center; /* center the image */
+    background-repeat: no-repeat;
+}
+
+.pink-text {
+  font-family: 'Luminari', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 0.1rem;
+  color: #d0b2fe; /* pink */
+  position: relative;
+}
+
+footer {
+  background-image: url("../images/market_banner_footer.jpg");
+  background-size: cover; /* Image fills the space */
+  background-position: center;
+  padding: 10px; 
+  text-align: center; 
+}
+
+.forgot-password {
+  height: 500px;
+  width: 180px;
+  margin-right: 50px;
+  margin-bottom: 30px;
+}
+
+/* Boxes for list items (welcome menu) */
+.list-group-item {
+    background-color: #f8f9fa;
+    border-radius: 0.5rem;     /* Rounded corners */
+    margin-bottom: 0.5rem;     /* Space between items */
+    transition: all 0.2s ease-in-out; /* Smooth hover transition */
+}
+
+.list-group-item a {
+    text-decoration: none; /* Remove underline */
+    color: #9004b7; /* Purple text base */
+    font-weight: 500;
+}
+
+.list-group-item:hover a {
+    color: #b07cfe; /* Pink text on hover */
+}
+
+.list-group-item:hover {
+    background-color: #e9ecf0; /* Slightly darker box on hover */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+

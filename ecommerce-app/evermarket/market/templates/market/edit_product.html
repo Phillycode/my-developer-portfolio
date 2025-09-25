@@ -1,0 +1,20 @@
+{% extends "market/base.html" %} {% block title %}Edit Product{% endblock %}
+<!-- Prettier-ignore -->
+{% block content %}
+<div class="container mt-5">
+  <div class="card shadow-sm mb-5">
+    <div class="card-body">
+      <h2 class="text-center mb-4">Edit Product</h2>
+      <form method="post" enctype="multipart/form-data">
+        {% csrf_token %} {{ form.as_p }}
+        <div class="d-flex justify-content-between mt-3">
+          <button type="submit" class="btn btn-success">Save Changes</button>
+          <a href="{% url 'market:manage_products' %}" class="btn btn-secondary"
+            >Cancel</a
+          >
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

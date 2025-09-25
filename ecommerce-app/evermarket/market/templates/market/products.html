@@ -1,0 +1,65 @@
+{% extends "market/base.html" %} {% block title %}Products - Evermarket
+<!-- Prettier-ignore -->
+{% endblock %} {% block content %}
+<div class="container mt-5">
+  <h1 class="mb-4">Available Products</h1>
+
+  {% if products %}
+  <div class="row">
+    {% for product in products %}
+    <div class="col-md-4 mb-4">
+      <div class="card h-100 shadow-sm">
+        {% if product.image %}
+        <img
+          src="{{ product.image.url }}"
+          class="card-img-top"
+          alt="{{ product.name }}"
+        />
+        {% else %}
+        <img
+          src="https://via.placeholder.com/300x200?text=No+Image"
+          class="card-img-top"
+          alt="No image"
+        />
+        {% endif %}
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">{{ product.name }}</h5>
+          <p class="card-text text-muted">
+            {{ product.description|truncatewords:20 }}
+          </p>
+          <p class="fw-bold mb-2">Price: R{{ product.price }}</p>
+
+          <!-- Go to product detail -->
+          <a
+            href="{% url 'market:product_detail' product.id %}"
+            class="btn btn-outline-secondary mb-2"
+          >
+            View Details
+          </a>
+
+          <!-- Add 1 to cart -->
+          <form
+            method="post"
+            action="{% url 'market:add_to_cart' product.id %}"
+          >
+            {% csrf_token %}
+            <button type="submit" class="btn btn-primary w-100">
+              Add to Cart
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% else %}
+  <div class="alert alert-info">
+    No products are available at the moment. Please check back later.
+  </div>
+  {% endif %}
+  <!-- Home button -->
+  <div class="mb-3">
+    <a href="{% url 'market:welcome' %}" class="btn btn-secondary">Home</a>
+  </div>
+</div>
+{% endblock %}

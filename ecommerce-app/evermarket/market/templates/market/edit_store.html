@@ -1,0 +1,20 @@
+{% extends "market/base.html" %} {% block title %}Edit Store{% endblock %}
+<!-- Prettier-ignore -->
+{% block content %}
+<div class="container mt-5">
+  <div class="card shadow-sm mb-3">
+    <div class="card-body">
+      <h2>Edit Store: {{ store.name }}</h2>
+      <!-- Allow file uploads -->
+      <form method="post" enctype="multipart/form-data">
+        {% csrf_token %} {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Save Changes</button>
+      </form>
+    </div>
+  </div>
+  <!-- Back button -->
+  <div class="mb-3">
+    <a href="{% url 'market:view_stores' %}" class="btn btn-secondary">Back</a>
+  </div>
+</div>
+{% endblock %}

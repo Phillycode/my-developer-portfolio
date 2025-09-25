@@ -1,0 +1,14 @@
+{% extends "market/base.html" %} {% block title %}Checkout Success{% endblock %}
+{% block content %}
+<div class="container mt-5 mb-5">
+  <div class="card shadow-sm">
+    <div class="card-body text-center">
+      <h2 class="text-success mb-4">Thank you for your purchase!</h2>
+      <p>Your order has been processed and an invoice sent to your email.</p>
+      <a href="{% url 'market:products' %}" class="btn btn-primary mt-3">
+        Continue Shopping
+      </a>
+    </div>
+  </div>
+</div>
+{% endblock %}

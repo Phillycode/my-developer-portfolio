@@ -1,0 +1,50 @@
+{% extends "market/base.html" %} {% block title %}Welcome{% endblock %}
+<!-- Prettier-ignore -->
+{% block content %}
+<div class="container mt-5">
+  <div class="card shadow-sm mb-5">
+    <div class="card-body">
+      <h2 class="text-center mb-4">Welcome, {{ user.username }}!</h2>
+
+      {% if user.is_authenticated %} {% if "Vendors" in user_groups %}
+      <!-- Vendor Dashboard -->
+      <h4>You are logged in as a <span class="text-primary">Vendor</span></h4>
+      <ul class="list-group mt-3">
+        <li class="list-group-item">
+          <a href="{% url 'market:create_store' %}">Create Store</a>
+        </li>
+        <li class="list-group-item">
+          <a href="{% url 'market:view_stores' %}">Manage My Stores</a>
+        </li>
+        <li class="list-group-item">
+          <a href="{% url 'market:add_product' %}">Add Product</a>
+        </li>
+        <li class="list-group-item">
+          <a href="{% url 'market:manage_products' %}">Manage My Products</a>
+        </li>
+      </ul>
+
+      {% elif "Buyers" in user_groups %}
+      <!-- Buyer Dashboard -->
+      <h4>You are logged in as a <span class="text-success">Buyer</span></h4>
+      <ul class="list-group mt-3">
+        <li class="list-group-item">
+          <a href="{% url 'market:products' %}">Browse Products</a>
+        </li>
+        <li class="list-group-item">
+          <a href="{% url 'market:view_cart' %}">View Cart & Checkout</a>
+        </li>
+      </ul>
+
+      {% else %}
+      <!-- Issue - if a group is not assigned -->
+      <p class="text-warning">
+        You are not assigned to a role yet. Please contact support.
+      </p>
+      {% endif %} {% else %}
+      <p>Please <a href="{% url 'market:login' %}">login</a> to continue.</p>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endblock %}

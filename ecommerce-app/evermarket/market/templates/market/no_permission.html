@@ -1,0 +1,29 @@
+{% extends "market/base.html" %} {% load static %} {% block content %}
+<div class="container mt-5">
+  <div class="row">
+    <!-- Left column: image -->
+    <div class="col-md-4 d-flex align-items-center">
+      <img
+        class="forgot-password"
+        src="{% static 'market/images/man_with_keys.png' %}"
+        alt="Forgot Password"
+      />
+    </div>
+
+    <!-- Right column -->
+    <div class="col-md-8">
+      <h2 class="text-warning">No can do</h2>
+      <p>
+        Looks like you don't have permission for this page. Contact support for
+        further assistance.
+      </p>
+      <!-- Back button -->
+      <div class="mb-3">
+        <a href="{% url 'market:login' %}" class="btn btn-secondary"
+          >Back to Login</a
+        >
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

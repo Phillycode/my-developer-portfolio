@@ -1,0 +1,26 @@
+{% extends "market/base.html" %} {% block title %}Leave a Review{% endblock %}
+{% block content %}
+<div class="container mt-5">
+  <div class="card shadow-sm mb-5">
+    <div class="card-body">
+      <h2 class="text-center mb-4">Leave a Review for "{{ product.name }}"</h2>
+
+      {% if messages %} {% for message in messages %}
+      <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+      {% endfor %} {% endif %}
+
+      <form method="post">
+        {% csrf_token %} {{ form.as_p }}
+        <button type="submit" class="btn btn-primary w-100">
+          Submit Review
+        </button>
+        <a
+          href="{% url 'market:product_detail' product.id %}"
+          class="btn btn-secondary w-100 mt-2"
+          >Cancel</a
+        >
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}
