@@ -4,9 +4,10 @@ __pycache__/
 *$py.class
 
 # Django stuff
-*.sqlite3        # default dev database
-db.sqlite3       # if using SQLite
-*.log            # log files
+*.sqlite3           # default dev database
+db.sqlite3          # if using SQLite
+*.log               # log files
+emails/             # file-based testing emails
 
 # Environment
 .env             # environment variables (API keys, secrets)
