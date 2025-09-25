@@ -36,7 +36,7 @@ python manage.py makemigrations
 python manage.py migrate
 ```
 
-- Create a Superuser in order to approve (promote) users for applied roles
+- Create a Superuser in order to approve applications of users so that they can acquire new roles.
 
 ```bash
 python manage.py createsuperuser
